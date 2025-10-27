@@ -1,6 +1,5 @@
 # HR-Analytics-Predict-Employee-Attrition
 
-# 👩‍💼 HR Analytics – Predict Employee Attrition
 
 ## 📝 Project Overview
 This project focuses on understanding and predicting **employee attrition** using HR data analytics.  
