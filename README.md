@@ -1,98 +1,104 @@
 # HR-Analytics-Predict-Employee-Attrition
 
-# 📊 Financial KPI Analysis for a Startup
+# 👩‍💼 HR Analytics – Predict Employee Attrition
 
 ## 📝 Project Overview
-This project focuses on analyzing **key financial performance indicators (KPIs)** for a startup to evaluate growth, profitability, and marketing efficiency.  
-By computing metrics like **Burn Rate**, **Customer Acquisition Cost (CAC)**, and **Customer Lifetime Value (LTV)**, the analysis helps founders make data-driven financial decisions and optimize spending.
+This project focuses on understanding and predicting **employee attrition** using HR data analytics.  
+Employee turnover is a major challenge for organizations, and this project aims to identify the key factors that cause employees to leave and provide data-driven recommendations to improve retention.
+
+Using **Python (Pandas, Seaborn, Scikit-learn)** for analysis and **Power BI** for visualization, this project demonstrates how HR departments can make evidence-based decisions to improve job satisfaction and workforce stability.
 
 ---
 
 ## 🎯 Objective
-To monitor monthly financial performance and identify trends that impact profitability, sustainability, and customer acquisition efficiency.
+To analyze HR data and build a model that predicts employee attrition, identifies major causes of turnover, and provides actionable insights for improving employee retention strategies.
 
 ---
 
 ## 🧰 Tools & Technologies
-- **Microsoft Excel** – For dataset creation, data cleaning, and KPI calculations  
-- **Python (Pandas, Matplotlib)** – For validating calculations and generating summary statistics  
-- **Tableau** – For building an interactive dashboard to visualize insights  
+- **Python:** For data preprocessing, analysis, and model building (Pandas, Seaborn, Scikit-learn)  
+- **Power BI:** For creating interactive dashboards and visualizing insights  
+- **Excel:** For initial data exploration and preparation  
 
 ---
 
 ## 📂 Dataset Information
-The dataset covers six months of startup operations and includes:
+Dataset used: [IBM HR Analytics Employee Attrition & Performance (Kaggle)](https://www.kaggle.com/pavansubhasht/ibm-hr-analytics-attrition-dataset)
 
 | Column | Description |
-|---------|--------------|
-| Month | Month of observation |
-| Revenue | Monthly revenue generated |
-| Expenses | Monthly operational and marketing expenses |
-| Marketing_Spend | Monthly marketing budget |
-| Customers | Total active customers |
-| New_Customers | Customers acquired during the month |
-
-### Sample Data
-| Month | Revenue | Expenses | Marketing_Spend | Customers | New_Customers |
-|--------|----------|-----------|----------------|------------|----------------|
-| Jan | 50,000 | 35,000 | 8,000 | 400 | 100 |
-| Feb | 60,000 | 40,000 | 10,000 | 480 | 80 |
-| Mar | 70,000 | 50,000 | 12,000 | 560 | 80 |
-| Apr | 80,000 | 55,000 | 11,000 | 640 | 80 |
-| May | 90,000 | 60,000 | 10,000 | 720 | 80 |
-| Jun | 95,000 | 65,000 | 9,500 | 800 | 80 |
+|---------|-------------|
+| Age | Age of employee |
+| Department | Employee department (Sales, HR, R&D) |
+| MonthlyIncome | Employee salary |
+| JobRole | Designation/position of employee |
+| OverTime | Whether the employee works overtime |
+| JobSatisfaction | Satisfaction level (1–4) |
+| Attrition | Whether the employee left (Yes/No) |
 
 ---
 
-## 📈 Key Performance Indicators (KPIs)
+## 🧮 Key Steps
 
-| KPI | Formula | Description |
-|------|----------|-------------|
-| **Burn Rate** | `Expenses - Revenue` | Shows monthly cash burn |
-| **CAC (Customer Acquisition Cost)** | `Marketing_Spend / New_Customers` | Measures cost to acquire a customer |
-| **LTV (Lifetime Value)** | `(Revenue / Customers) × 12` | Average customer value per year |
-| **LTV:CAC Ratio** | `LTV / CAC` | Indicates marketing efficiency and profitability |
+### **1️⃣ Data Collection & Cleaning**
+- Imported dataset into Python using Pandas  
+- Removed duplicates and null values  
+- Encoded categorical features using `LabelEncoder`
+
+### **2️⃣ Exploratory Data Analysis (EDA)**
+- Visualized attrition distribution by department, salary, and age  
+- Found patterns: attrition highest among younger employees and low-salary groups  
+- Analyzed correlation using heatmaps and bar charts
+
+### **3️⃣ Model Building**
+- Applied **Logistic Regression** for binary classification  
+- Split dataset into training and testing sets (80/20)  
+- Achieved ~82% accuracy  
+- Generated **Confusion Matrix** and **Classification Report**
+
+### **4️⃣ Visualization & Dashboard**
+- Designed an interactive **Power BI Dashboard** with:
+  - Cards: Total Employees, Attrition Count, Attrition Rate  
+  - Charts: Attrition by Department, Salary Band, Gender, and Age  
+  - Insights section summarizing key trends  
+
+### **5️⃣ Insights & Recommendations**
+- Attrition highest among employees aged 25–35  
+- Overtime and low salary are top attrition drivers  
+- Sales and Research departments show maximum turnover  
+- Recommend salary benchmarking, flexible work policies, and better career progression programs  
 
 ---
 
-## 📊 Dashboard Highlights
-The Tableau dashboard includes:
-- Line Chart – Revenue vs. Expenses over time  
-- Bar Chart – Monthly Burn Rate  
-- KPI Cards – CAC, LTV, and LTV:CAC ratio  
-- Insights Section – Highlights financial health and efficiency  
-
----
-
-## 🧭 Project Workflow
-1. Created dataset in Excel with monthly financial metrics  
-2. Performed KPI calculations using formulas and Python validation  
-3. Imported data into Tableau for visualization  
-4. Designed dashboard with charts and KPI indicators  
-5. Summarized results in a two-page professional report  
+## 📈 Dashboard Highlights
+Power BI Dashboard Visuals:
+- **Pie Chart:** Attrition %  
+- **Bar Chart:** Attrition by Department and Job Role  
+- **Line Chart:** Salary vs Attrition  
+- **KPIs:** Total Employees, Attrition Rate  
 
 ---
 
 ## 💡 Key Insights
-- Revenue shows consistent growth while expenses remain stable  
-- CAC decreases over time → improved marketing efficiency  
-- LTV:CAC ratio greater than 3 → strong profitability and sustainability  
-- Startup demonstrates positive scalability potential  
+- 16% overall attrition rate observed  
+- Employees with **low income and overtime workload** are more likely to leave  
+- Work-life balance and job satisfaction have strong retention impact  
+- Targeted interventions can reduce turnover by focusing on at-risk groups  
 
 ---
 
 ## 📎 Deliverables
-- `Financial_KPI_Analysis_Report_2Page.pdf` – Final 2-page analysis report  
-- `financial_data.xlsx` – Dataset with KPI calculations  
-- `Financial_Dashboard.twbx` – Tableau dashboard file  
+- `HR_Analytics_Project_Report_2Page.pdf` – Final 2-page report  
+- `hr_analytics.ipynb` – Python notebook for analysis and model  
+- `HR_Attrition_Dashboard.pbix` – Power BI dashboard file  
 - `README.md` – Project documentation  
 
 ---
 
 ## 🧠 Learning Outcomes
-- Understanding of financial KPI calculation  
-- Hands-on practice with Excel formulas and Tableau dashboarding  
-- Insight into real-world startup financial analysis  
+- Understanding of HR data analysis using Python and Power BI  
+- Experience with classification models (Logistic Regression)  
+- Ability to interpret and visualize HR insights effectively  
 
 ---
-### ⭐ If you find this project helpful, consider giving it a star on GitHub!
+
+### ⭐ If you found this project helpful, don’t forget to star the repository!
